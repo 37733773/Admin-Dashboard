@@ -1,7 +1,11 @@
 body,
 #sidebar,
 #header,
-#main-content {
+#main-content,
+ul,
+#header #upper,
+#header #down,
+#header #down .right {
     display: grid;
 }
 
@@ -15,14 +19,98 @@ body {
 
 #sidebar {
     grid-area: 1 / 1 / 7 / 1;
-    background-color: aqua;
+    background-color:rgb(73, 161, 224);
+
+    grid-template-rows: 1fr 4fr 5fr;
 }
 
 #header {
     grid-area: 1 / 2 / 1 / 2;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #main-content {
     grid-area: 2 / 2 / 7 / 2;
     background-color:aliceblue;
 }
+
+#logo {
+    grid-row: 1 / 2;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+   
+}
+
+#logo::before {
+    content: url(./icons/heart-box.svg);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    margin-left: 5px;
+}
+
+#navigation {
+    grid-row: 2 / 3;
+}
+
+#controls {
+    grid-row: 3 / 4;
+}
+
+ul {
+    gap: 10px;
+}
+
+li {
+    color: white;
+    list-style-type: none;
+}
+
+#header {
+    grid-template-rows: 1fr 1fr;
+    padding: 24px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#header #upper,
+#header #down {
+    grid-template-columns: 2fr 1fr;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    margin-left: 5px;
+}
+
+#header #down .right {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#head #upper {
+    display: flex;
+    align-items: center;
+}
+
+#header .right {
+    text-align: right;
+}
+
+.right button {
+    width: 95%;
+    height: 70%;
+    color: white;
+    background-color:cornflowerblue;
+    border-radius: 20px;
+}
+
+
