@@ -5,8 +5,13 @@ body,
 ul,
 #header #upper,
 #header #down,
-#header #down .right {
+#header #down .right,
+#main-content .left,
+#main-content .left .content,
+#main-content .right .upper,
+#main-content .right #down {
     display: grid;
+    box-sizing: border-box;
 }
 
 body {
@@ -112,5 +117,42 @@ input {
     background-color:cornflowerblue;
     border-radius: 20px;
 }
+
+#main-content {
+    grid-template-columns: 2fr 1fr;
+    padding: 10px;
+}
+
+#main-content .left {
+    grid-template: 1fr 1fr;
+}
+
+#main-content .left .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#main-content .left .content div,
+#main-content .right .content {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+#main-content .right {
+    grid-template-rows: 1fr 2fr 2fr;
+} 
+
+#main-content .title {
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+#main-content .right .upper,
+#main-content .right .down {
+    grid-template-rows: 1fr 5fr;
+}
+
+
 
 
